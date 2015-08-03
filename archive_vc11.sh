@@ -1,3 +1,5 @@
+#!/bin/sh
+
 PATH=/c/Program\ Files/Git/usr/bin/:$PATH
 
 SPECTRUM_PATH=Qt5.4.1-x86-msvc2012_opengl
