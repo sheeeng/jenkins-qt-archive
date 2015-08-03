@@ -111,8 +111,6 @@ robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQ
 robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%QT_RELEASE_DIRECTORY%\QtQuick
 robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%QT_RELEASE_DIRECTORY%\QtQuick.2
 
-cd %WORKSPACE%
-
 REM ====================================================================
 
 if %ERRORLEVEL% EQU 16 echo ***FATAL ERROR*** & goto end
