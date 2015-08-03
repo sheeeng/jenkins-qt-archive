@@ -17,44 +17,25 @@ SET GNUWIN32_BIN_PATH=%GNUWIN32_PATH%\bin
 echo %%GNUWIN32_BIN_PATH%%: %GNUWIN32_BIN_PATH% >> %LOG_FILEPATH%
 echo %%GNUWIN32_BIN_PATH%%: %GNUWIN32_BIN_PATH%
 
-echo
-------------------------------------------------------------------------
-| %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo ------------------------------------------------------------------------ | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
 
-echo BUILD_NUMBER: %BUILD_NUMBER% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo BUILD_ID: %BUILD_ID% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo BUILD_DISPLAY_NAME: %BUILD_DISPLAY_NAME% |
-%GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
-echo BUILD_TAG: %BUILD_TAG% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo JOB_NAME: %JOB_NAME% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo EXECUTOR_NUMBER: %EXECUTOR_NUMBER% | %GNUWIN32_BIN_PATH%\tee.exe
---append %LOG_FILEPATH%
-echo NODE_NAME: %NODE_NAME% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo NODE_LABELS: %NODE_LABELS% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo WORKSPACE: %WORKSPACE% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo JENKINS_HOME: %JENKINS_HOME% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo JENKINS_URL: %JENKINS_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo BUILD_URL: %BUILD_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo JOB_URL: %JOB_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo SVN_REVISION: %SVN_REVISION% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
-echo SVN_URL: %SVN_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append
-%LOG_FILEPATH%
+echo BUILD_NUMBER: %BUILD_NUMBER% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo BUILD_ID: %BUILD_ID% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo BUILD_DISPLAY_NAME: %BUILD_DISPLAY_NAME% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo BUILD_TAG: %BUILD_TAG% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo JOB_NAME: %JOB_NAME% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo EXECUTOR_NUMBER: %EXECUTOR_NUMBER% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo NODE_NAME: %NODE_NAME% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo NODE_LABELS: %NODE_LABELS% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo WORKSPACE: %WORKSPACE% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo JENKINS_HOME: %JENKINS_HOME% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo JENKINS_URL: %JENKINS_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo BUILD_URL: %BUILD_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo JOB_URL: %JOB_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo SVN_REVISION: %SVN_REVISION% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo SVN_URL: %SVN_URL% | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
 
-echo
-------------------------------------------------------------------------
-| %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
+echo ------------------------------------------------------------------------ | %GNUWIN32_BIN_PATH%\tee.exe --append %LOG_FILEPATH%
 
 REM ====================================================================
 
@@ -85,92 +66,50 @@ REM ====================================================================
 
 REM Qt
 
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" Qt5Cored.dll Qt5Core.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" Qt5Guid.dll Qt5Gui.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" Qt5Widgetsd.dll Qt5Widgets.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" Qt5Networkd.dll Qt5Network.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" Qt5Qmld.dll Qt5Qml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" Qt5Quickd.dll Qt5Quick.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" Qt5Xmld.dll Qt5Xml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" icudt*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" icuin*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%SPECTRUM_PATH%" icuuc*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\plugins\platforms" "%SPECTRUM_PATH%\platforms"
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQml" "%SPECTRUM_PATH%\QtQml
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQuick" "%SPECTRUM_PATH%\QtQuick
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQuick.2" "%SPECTRUM_PATH%\QtQuick.2
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Cored.dll Qt5Core.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Guid.dll Qt5Gui.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Widgetsd.dll Qt5Widgets.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Networkd.dll Qt5Network.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Qmld.dll Qt5Qml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Quickd.dll Qt5Quick.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Xmld.dll Qt5Xml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" icudt*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" icuin*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" icuuc*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%SPECTRUM_PATH%\platforms"
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%SPECTRUM_PATH%\QtQml
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%SPECTRUM_PATH%\QtQuick
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%SPECTRUM_PATH%\QtQuick.2
 
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" Qt5Cored.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" Qt5Guid.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" Qt5Widgetsd.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" Qt5Networkd.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" Qt5Qmld.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" Qt5Quickd.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" Qt5Xmld.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" icudt*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" icuin*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_DEBUG_DIRECTORY%" icuuc*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\plugins\platforms" "%QT_DEBUG_DIRECTORY%\platforms"
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQml" "%QT_DEBUG_DIRECTORY%\QtQml
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQuick" "%QT_DEBUG_DIRECTORY%\QtQuick
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQuick.2" "%QT_DEBUG_DIRECTORY%\QtQuick.2
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Cored.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Guid.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Widgetsd.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Networkd.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Qmld.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Quickd.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Xmld.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" icudt*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" icuin*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" icuuc*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%QT_DEBUG_DIRECTORY%\platforms"
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%QT_DEBUG_DIRECTORY%\QtQml
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%QT_DEBUG_DIRECTORY%\QtQuick
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%QT_DEBUG_DIRECTORY%\QtQuick.2
 
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" Qt5Core.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" Qt5Gui.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" Qt5Widgets.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" Qt5Network.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" Qt5Qml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" Qt5Quick.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" Qt5Xml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" icudt*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" icuin*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin"
-"%QT_RELEASE_DIRECTORY%" icuuc*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\plugins\platforms" "%QT_RELEASE_DIRECTORY%\platforms"
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQml" "%QT_RELEASE_DIRECTORY%\QtQml
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQuick" "%QT_RELEASE_DIRECTORY%\QtQuick
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir
-"%QT_PATH%\qml\QtQuick.2" "%QT_RELEASE_DIRECTORY%\QtQuick.2
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Core.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Gui.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Widgets.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Network.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Qml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Quick.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Xml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" icudt*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" icuin*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" icuuc*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%QT_RELEASE_DIRECTORY%\platforms"
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%QT_RELEASE_DIRECTORY%\QtQml
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%QT_RELEASE_DIRECTORY%\QtQuick
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%QT_RELEASE_DIRECTORY%\QtQuick.2
 
 REM ====================================================================
 
@@ -198,4 +137,3 @@ IF %ERRORLEVEL% LEQ 4 EXIT /B 0
 REM ====================================================================
 
 :eof
-
