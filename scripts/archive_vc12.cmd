@@ -43,20 +43,20 @@ set QT_PATH=C:\Qt\Qt5.4.1-x86-msvc2013_opengl\5.4\msvc2013_opengl
 echo %%QT_PATH%%: %QT_PATH% >> %LOG_FILEPATH%
 echo %%QT_PATH%%: %QT_PATH%
 
-SET SPECTRUM_PATH=%WORKSPACE%\Qt5.4.1-x86-msvc2013_opengl
-echo %%SPECTRUM_PATH%%: %SPECTRUM_PATH% >> %LOG_FILEPATH%
-echo %%SPECTRUM_PATH%%: %SPECTRUM_PATH%
-mkdir %SPECTRUM_PATH%
+SET DIRECTORY_NAME=%WORKSPACE%\Qt5.4.1-x86-msvc2013_opengl
+echo %%DIRECTORY_NAME%%: %DIRECTORY_NAME% >> %LOG_FILEPATH%
+echo %%DIRECTORY_NAME%%: %DIRECTORY_NAME%
+mkdir %DIRECTORY_NAME%
 
-SET QT_DEBUG_DIRECTORY=Qt5.4.1-x86-msvc2013_opengl_debug
-echo %%QT_DEBUG_DIRECTORY%%: %QT_DEBUG_DIRECTORY% >> %LOG_FILEPATH%
-echo %%QT_DEBUG_DIRECTORY%%: %QT_DEBUG_DIRECTORY%
-mkdir %QT_DEBUG_DIRECTORY%
+SET ARCHIVE_DEBUG_DIRECTORY_NAME=Qt5.4.1-x86-msvc2013_opengl_debug
+echo %%ARCHIVE_DEBUG_DIRECTORY_NAME%%: %ARCHIVE_DEBUG_DIRECTORY_NAME% >> %LOG_FILEPATH%
+echo %%ARCHIVE_DEBUG_DIRECTORY_NAME%%: %ARCHIVE_DEBUG_DIRECTORY_NAME%
+mkdir %ARCHIVE_DEBUG_DIRECTORY_NAME%
 
-SET QT_RELEASE_DIRECTORY=Qt5.4.1-x86-msvc2013_opengl_release
-echo %%QT_RELEASE_DIRECTORY%%: %QT_RELEASE_DIRECTORY% >> %LOG_FILEPATH%
-echo %%QT_RELEASE_DIRECTORY%%: %QT_RELEASE_DIRECTORY%
-mkdir %QT_RELEASE_DIRECTORY%
+SET ARCHIVE_RELEASE_DIRECTORY_NAME=Qt5.4.1-x86-msvc2013_opengl_release
+echo %%ARCHIVE_RELEASE_DIRECTORY_NAME%%: %ARCHIVE_RELEASE_DIRECTORY_NAME% >> %LOG_FILEPATH%
+echo %%ARCHIVE_RELEASE_DIRECTORY_NAME%%: %ARCHIVE_RELEASE_DIRECTORY_NAME%
+mkdir %ARCHIVE_RELEASE_DIRECTORY_NAME%
 
 REM ====================================================================
 
@@ -66,50 +66,50 @@ REM ====================================================================
 
 REM Qt
 
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Cored.dll Qt5Core.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Guid.dll Qt5Gui.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Widgetsd.dll Qt5Widgets.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Networkd.dll Qt5Network.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Qmld.dll Qt5Qml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Quickd.dll Qt5Quick.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" Qt5Xmld.dll Qt5Xml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" icudt*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" icuin*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%SPECTRUM_PATH%" icuuc*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%SPECTRUM_PATH%\platforms"
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%SPECTRUM_PATH%\QtQml
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%SPECTRUM_PATH%\QtQuick
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%SPECTRUM_PATH%\QtQuick.2
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" Qt5Cored.dll Qt5Core.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" Qt5Guid.dll Qt5Gui.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" Qt5Widgetsd.dll Qt5Widgets.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" Qt5Networkd.dll Qt5Network.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" Qt5Qmld.dll Qt5Qml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" Qt5Quickd.dll Qt5Quick.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" Qt5Xmld.dll Qt5Xml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" icudt*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" icuin*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%DIRECTORY_NAME%" icuuc*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%DIRECTORY_NAME%\platforms"
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%DIRECTORY_NAME%\QtQml
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%DIRECTORY_NAME%\QtQuick
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%DIRECTORY_NAME%\QtQuick.2
 
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Cored.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Guid.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Widgetsd.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Networkd.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Qmld.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Quickd.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" Qt5Xmld.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" icudt*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" icuin*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_DEBUG_DIRECTORY%" icuuc*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%QT_DEBUG_DIRECTORY%\platforms"
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%QT_DEBUG_DIRECTORY%\QtQml
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%QT_DEBUG_DIRECTORY%\QtQuick
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%QT_DEBUG_DIRECTORY%\QtQuick.2
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" Qt5Cored.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" Qt5Guid.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" Qt5Widgetsd.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" Qt5Networkd.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" Qt5Qmld.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" Qt5Quickd.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" Qt5Xmld.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" icudt*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" icuin*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_DEBUG_DIRECTORY_NAME%" icuuc*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%ARCHIVE_DEBUG_DIRECTORY_NAME%\platforms"
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%ARCHIVE_DEBUG_DIRECTORY_NAME%\QtQml
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%ARCHIVE_DEBUG_DIRECTORY_NAME%\QtQuick
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%ARCHIVE_DEBUG_DIRECTORY_NAME%\QtQuick.2
 
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Core.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Gui.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Widgets.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Network.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Qml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Quick.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" Qt5Xml.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" icudt*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" icuin*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%QT_RELEASE_DIRECTORY%" icuuc*.dll
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%QT_RELEASE_DIRECTORY%\platforms"
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%QT_RELEASE_DIRECTORY%\QtQml
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%QT_RELEASE_DIRECTORY%\QtQuick
-robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%QT_RELEASE_DIRECTORY%\QtQuick.2
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" Qt5Core.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" Qt5Gui.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" Qt5Widgets.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" Qt5Network.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" Qt5Qml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" Qt5Quick.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" Qt5Xml.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" icudt*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" icuin*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% "%QT_PATH%\bin" "%ARCHIVE_RELEASE_DIRECTORY_NAME%" icuuc*.dll
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\plugins\platforms" "%ARCHIVE_RELEASE_DIRECTORY_NAME%\platforms"
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQml" "%ARCHIVE_RELEASE_DIRECTORY_NAME%\QtQml
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick" "%ARCHIVE_RELEASE_DIRECTORY_NAME%\QtQuick
+robocopy /is /copyall /njs /np /tee /log+:%LOG_FILEPATH% /mir "%QT_PATH%\qml\QtQuick.2" "%ARCHIVE_RELEASE_DIRECTORY_NAME%\QtQuick.2
 
 REM ====================================================================
 
