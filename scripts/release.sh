@@ -9,10 +9,10 @@ elif [[ $JOB_NAME =~ "vc12" ]]
 then
  VC_NAME="msvs2013_vc12"
 else
- VC_NAME="vc"
+ exit 42
 fi
 
 RELEASE_DIRECTORY=/c/jenkins/"$VC_NAME"
 
 mkdir -p $RELEASE_DIRECTORY
-cp -rf *.7z *.tar.gz *.zip $RELEASE_DIRECTORY
+cp -frv *.7z *.tar.gz *.zip $RELEASE_DIRECTORY
