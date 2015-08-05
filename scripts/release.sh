@@ -15,4 +15,4 @@ fi
 RELEASE_DIRECTORY=/c/jenkins/"$VC_NAME"
 
 mkdir -p $RELEASE_DIRECTORY
-cp -frv *.7z *.tar.gz *.zip $RELEASE_DIRECTORY
+cp -frv *.7z $RELEASE_DIRECTORY
