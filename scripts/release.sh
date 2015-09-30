@@ -14,5 +14,5 @@ fi
 
 RELEASE_DIRECTORY=/c/jenkins/"$VC_NAME"
 
-mkdir -p $RELEASE_DIRECTORY
-cp -frv *.7z $RELEASE_DIRECTORY
+#mkdir -p $RELEASE_DIRECTORY
+#cp -frv *.7z $RELEASE_DIRECTORY
